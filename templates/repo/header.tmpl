@@ -60,10 +60,9 @@
 						{{svg "octicon-rss" 16}}
 					</a>
 					{{end}}
-					{{template "repo/watch_unwatch" $}}
-					{{if not $.DisableStars}}
-					{{template "repo/star_unstar" $}}
-					{{end}}
+							{{if not $.DisableStars}}
+							{{template "repo/star_unstar" $}}
+							{{end}}
 					{{if and (not .IsEmpty) ($.Permission.CanRead ctx.Consts.RepoUnitTypeCode)}}
 						<div class="ui labeled button
 							{{if or (not $.IsSigned) (and (not $.CanSignedUserFork) (not $.UserAndOrgForks))}}
